@@ -2,7 +2,7 @@
     "watch": ["src", ".env"],
     "ext": "ts,json",
     "ignore": [],
-    "exec": "tsx src/server.ts",
+    "exec": "tsx --env-file=.env src/server.ts",
     "execMap": {
         "ts": "tsx"
     }
