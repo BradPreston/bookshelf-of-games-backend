@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon",
+    "dev": "concurrently \"pnpm run dev:db\" \"nodemon\"",
+    "dev:db": "turso dev --db-file local.db",
     "build": "tsc",
     "start": "node dist/server.js",
     "prepare": "husky",
@@ -42,6 +43,7 @@
   },
   "dependencies": {
     "@libsql/client": "^0.17.4",
+    "concurrently": "^10.0.3",
     "dotenv": "^17.4.2",
     "drizzle-orm": "1.0.0-rc.4",
     "express": "^5.2.1",
