@@ -1,0 +1,5 @@
+# Environment veriables
+.env
+
+# Modules
+node_modules
