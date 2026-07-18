@@ -3,6 +3,6 @@ import { games } from './games';
 
 export const rounds = sqliteTable('rounds', {
   id: int('id').primaryKey({ autoIncrement: true }),
-  gameId: int('game_id').references(() => games.id),
+  gameId: int('game_id').notNull().references(() => games.id),
   round: int('round').notNull(),
 });

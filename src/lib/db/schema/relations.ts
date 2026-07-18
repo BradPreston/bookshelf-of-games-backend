@@ -1,10 +1,11 @@
 import { defineRelations } from 'drizzle-orm';
 import { games } from './games';
+import { gameTypes } from './gameTypes';
 import { rounds } from './rounds';
 import { scores } from './scores';
 import { users } from './users';
 
-export const relations = defineRelations({ users, rounds, scores, games }, r => ({
+export const relations = defineRelations({ users, rounds, scores, games, gameTypes }, r => ({
   users: {
     scores: r.many.scores({
       from: r.users.id,
@@ -16,6 +17,7 @@ export const relations = defineRelations({ users, rounds, scores, games }, r => 
       from: r.games.id,
       to: r.rounds.gameId,
     }),
+    gameType: r.one.gameTypes(),
   },
   rounds: {
     game: r.one.games(),
@@ -27,5 +29,11 @@ export const relations = defineRelations({ users, rounds, scores, games }, r => 
   scores: {
     user: r.one.users(),
     round: r.one.rounds(),
+  },
+  gameTypes: {
+    games: r.many.games({
+      from: r.gameTypes.id,
+      to: r.games.gameTypeId,
+    }),
   },
 }));
