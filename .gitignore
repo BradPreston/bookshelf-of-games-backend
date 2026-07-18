@@ -6,3 +6,6 @@ node_modules
 
 # Builds
 dist/
+
+# Local DB
+local.db*
