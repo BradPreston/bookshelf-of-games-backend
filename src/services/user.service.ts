@@ -6,7 +6,7 @@ import { userRepository } from '../repositories/user.repository';
 export function userService() {
   const repo = userRepository();
 
-  async function register(data: Omit<InsertUser, 'password'> & { password: string }) {
+  async function register(data: InsertUser) {
     const hashed = await bcrypt.hash(data.password, 10);
 
     try {
