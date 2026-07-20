@@ -17,7 +17,7 @@ export type SelectGame = typeof games.$inferSelect;
 export type SelectGameType = typeof gameTypes.$inferSelect;
 export type SelectRound = typeof rounds.$inferSelect;
 export type SelectScore = typeof scores.$inferSelect;
-export type SelectUser = typeof users.$inferSelect;
+export type SelectUser = Omit<typeof users.$inferSelect, 'password'>;
 
 // Export insert schema
 export type InsertGame = typeof games.$inferInsert;
