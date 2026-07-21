@@ -23,6 +23,9 @@ importers:
       drizzle-orm:
         specifier: 1.0.0-rc.4
         version: 1.0.0-rc.4(@libsql/client@0.17.4)(zod@4.4.3)
+      drizzle-zod:
+        specifier: ^0.8.3
+        version: 0.8.3(drizzle-orm@1.0.0-rc.4(@libsql/client@0.17.4)(zod@4.4.3))(zod@4.4.3)
       express:
         specifier: ^5.2.1
         version: 5.2.1
@@ -45,6 +48,9 @@ importers:
       '@types/express':
         specifier: ^5.0.6
         version: 5.0.6
+      '@types/express-serve-static-core':
+        specifier: ^5.1.2
+        version: 5.1.2
       '@types/node':
         specifier: ^26.1.1
         version: 26.1.1
@@ -1003,6 +1009,12 @@ packages:
         optional: true
       zod:
         optional: true
+
+  drizzle-zod@0.8.3:
+    resolution: {integrity: sha512-66yVOuvGhKJnTdiqj1/Xaaz9/qzOdRJADpDa68enqS6g3t0kpNkwNYjUuaeXgZfO/UWuIM9HIhSlJ6C5ZraMww==}
+    peerDependencies:
+      drizzle-orm: '>=0.36.0'
+      zod: ^3.25.0 || ^4.0.0
 
   dunder-proto@1.0.1:
     resolution: {integrity: sha512-KIN/nDJBQRcXw0MLVhZE9iQHmG68qAVIBg9CqmUYjmQIhgij9U5MFvrqkUL5FbtyyzZuOeOt0zdeRe4UY7ct+A==}
@@ -2699,6 +2711,11 @@ snapshots:
   drizzle-orm@1.0.0-rc.4(@libsql/client@0.17.4)(zod@4.4.3):
     optionalDependencies:
       '@libsql/client': 0.17.4
+      zod: 4.4.3
+
+  drizzle-zod@0.8.3(drizzle-orm@1.0.0-rc.4(@libsql/client@0.17.4)(zod@4.4.3))(zod@4.4.3):
+    dependencies:
+      drizzle-orm: 1.0.0-rc.4(@libsql/client@0.17.4)(zod@4.4.3)
       zod: 4.4.3
 
   dunder-proto@1.0.1:
