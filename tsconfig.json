@@ -6,7 +6,7 @@
     "types": ["node"],
     "strict": true,
     "module": "nodenext",
-    "target": "es2025",
+    "target": "esnext",
     "esModuleInterop": true
   },
   "include": ["src/**/*"],
