@@ -5,7 +5,7 @@ import env from './lib/env';
 import { userRouter } from './routes/user.routes';
 
 const app = express();
-app.all('/api/auth/*', toNodeHandler(auth));
+app.all('/api/auth/{*any}', toNodeHandler(auth));
 app.use(express.json());
 
 const router = express.Router({ caseSensitive: true, strict: true });
