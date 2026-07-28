@@ -5,6 +5,7 @@ import { scores } from './scores';
 import { users } from './users';
 
 // Export schema types
+export { account, session, verification } from './auth';
 export { games } from './games';
 export { gameTypes } from './gameTypes';
 export { relations } from './relations';
